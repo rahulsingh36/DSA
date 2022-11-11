@@ -6,4 +6,5 @@ int main(){
     cout<<"Rahul Singh"<<endl;    
     cout<<"Rahul Singhmar"<<endl;
     cout<<"Lakshpreet"<<endl;
+    
 }
