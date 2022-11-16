@@ -1,14 +1,16 @@
 #include<iostream>
 using namespace std;
+#include <bits/stdc++.h>
+#include<vector>
 
 void solve(string digit, string output,int index, string & ans, string mapping){
     // base case
     if(index >= digit.length()){
         ans.push_back(output);
-        return;
+        return ;
     }
     int number = digit[index]-'0';
-    string value = mapping[number];
+    string value =  mapping[number];
     for(int i = 0;i<value.length(); i++){
         output.push_back(value[i]);
         solve(digit,output,index+1,ans,mapping);
@@ -16,7 +18,7 @@ void solve(string digit, string output,int index, string & ans, string mapping){
     }
 }
 
-string lettercombination(string digits){
+string lettercombination(string digit){
     string ans;
     if(digit.length() == 0){
         return ans;
@@ -24,12 +26,11 @@ string lettercombination(string digits){
     string output = "";
     int index = 0;
     string mapping[10] = {"", "","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
-    solve(digits,output,index,ans,mapping);
+    solve(digit,output,index,ans,mapping[10]);
     return ans;
 }
 
 int main(){
     string digit = "23";
     cout<< lettercombination(digit) <<" ";
-
 }
