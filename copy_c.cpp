@@ -67,8 +67,8 @@ int main(){
     cout<<endl;
 
     data.name[0] = 's';
-    data.print(); 
-    cout<<endl;
+    // data.print(); 
+    // cout<<endl;
 
     data1.print();
 }
