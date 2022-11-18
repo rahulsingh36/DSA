@@ -10,7 +10,6 @@ public:
     int rollno;
 
     // default constructor 
-
     Rahul(){
         cout<<"Default Constructor called"<<endl;
         name = new char[100];
