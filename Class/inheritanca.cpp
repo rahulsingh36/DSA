@@ -24,7 +24,7 @@ class male: public human { //inheritance calling
         cout<<"Male sleeping"<<endl;
     }
 };
-
+ 
 int main(){
     male object1;
     cout<<object1.age<<endl;
