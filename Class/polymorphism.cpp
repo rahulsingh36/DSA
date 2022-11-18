@@ -15,7 +15,7 @@ class B{
             cout<<"output is "<<val1 +val2<<endl;
         }
 
-};
+}; 
 int main(){
     B h1,h2;
     h1.a = 5;
