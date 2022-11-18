@@ -16,7 +16,6 @@ class human{
             this->weight = w;
         }
 };
-
 class male: public human { //inheritance calling
     public:
         string color;
