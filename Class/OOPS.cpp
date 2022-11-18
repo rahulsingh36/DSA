@@ -22,7 +22,7 @@ public:
         cout<< "this -> "<< this << endl; // this point the address
         this -> phoneno = phoneno; // here this is used for putting the use in the self object value
         this -> name  = name;
-    }
+    } 
     // copy constructor 
     Rahul(Rahul& temp){  // passing by reference
         this-> phoneno = temp.phoneno;
