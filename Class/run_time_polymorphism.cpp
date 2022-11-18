@@ -20,7 +20,7 @@ class c: public A{
     void show(){
         cout<<"Inside C"<<endl;
     }
-};
+}; 
 
 int main(){
     A c1;
