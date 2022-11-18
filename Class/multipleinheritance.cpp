@@ -13,7 +13,7 @@ class human{
         cout<<"i am human";
     }
 };
-
+ 
 class animal{
     public:
         int age;
