@@ -8,6 +8,7 @@ private:
 public:
     char *name;
     int rollno;
+    
 
     // default constructor 
     Rahul(){
