@@ -9,7 +9,6 @@ public:
     char *name;
     int rollno;
     
-
     // default constructor 
     Rahul(){
         cout<<"Default Constructor called"<<endl;
