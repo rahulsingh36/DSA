@@ -14,7 +14,6 @@ public:
         cout<<"Default Constructor called"<<endl;
         name = new char[100];
     }
-
     // copy constructor  == Deapcopy
     Rahul(Rahul& temp){  // passing by reference
         char *ch = new char[strlen(temp.name) + 1];
