@@ -43,6 +43,7 @@ void insertAtposition(Node* &tail,Node* &head,int position, int d){
     }
     Node* temp = head;  
     int count = 1;
+    
     while(count <position - 1){
         temp = temp -> next;
         count++;
