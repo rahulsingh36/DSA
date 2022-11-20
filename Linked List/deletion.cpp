@@ -36,7 +36,7 @@ void insertAtTail(Node* &tail, int d){
     Node* temp = new Node(d);
     tail->next = temp;
     tail = tail -> next;
-}
+} 
 
 // deleting nodes 
 void deletioninnode(int position,Node* &head){
