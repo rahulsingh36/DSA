@@ -82,8 +82,7 @@ int main(){
     Node* n1 = new Node(10);
     Node* head = n1;
     // for tail part 
-    cout<<"tail part"<<endl;
- 
+    cout<<"tail part"<<endl; 
     Node* tail = n1;
     printtail(head);
     cout<<endl;
