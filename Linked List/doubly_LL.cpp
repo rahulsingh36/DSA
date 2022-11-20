@@ -86,8 +86,6 @@ int findlength(Node* &head){
     return length;
 }
 
-
-
 int main(){
     Node* n1 = new Node(10);
     Node* head = n1;
