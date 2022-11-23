@@ -160,7 +160,7 @@ int main(){
 
     removeLoop(tail);
 
-    if(floydDetectionLoop(tail) != NULL){
+    if(floydDetectionLoop(tail) != NULL){ 
         cout<<"Loop is present";
     }
     else{
