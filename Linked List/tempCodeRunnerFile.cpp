@@ -16,6 +16,13 @@ class Node{
         this -> data = data;
         this -> next = NULL;
     }
+    ~Node(){
+        int value = this->data;
+        if(this->next != NULL){
+            delete next;
+            this-> next = NULL; 
+        }
+    }
 };
 void insertAtHead(Node* &head, int d){
     if(head == NULL){
@@ -23,11 +30,25 @@ void insertAtHead(Node* &head, int d){
         temp -> next = head;
         head = temp;
     }
-    Node* temp  = new Node(d);
-    temp -> next = head;
-    head = temp;
+    else{
+        Node* temp  = new Node(d);
+        temp -> next = head;
+        head = temp;
+    }
 }
-
+void insertAtTail(Node* &tail, int d){
+    if(tail == NULL){
+        Node* temp  = new Node(d);
+        tail->next = temp;
+        tail = temp;
+    }
+    else{
+        Node* temp = new Node(d);
+        tail->next = temp;
+        tail = temp;
+    }
+    
+}
 void printhead(Node* &head){
     Node* temp = head;
     while(temp != NULL){
