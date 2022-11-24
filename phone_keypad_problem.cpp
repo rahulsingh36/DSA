@@ -1,9 +1,10 @@
 #include<iostream>
 using namespace std;
+#include<string.h>
 #include <bits/stdc++.h>
 #include<vector>
 
-void solve(string digit, string output,int index, string & ans, string mapping){
+void solve(string digit, vector<vector<string>> output,int index, string & ans, vector<string> mapping){
     // base case
     if(index >= digit.length()){
         ans.push_back(output);
@@ -23,10 +24,10 @@ string lettercombination(string digit){
     if(digit.length() == 0){
         return ans;
     }
-    string output = "";
+    vector<string> output = "";
     int index = 0;
     string mapping[10] = {"", "","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
-    solve(digit,output,index,ans,mapping[10]);
+    solve(digit, output,index,ans,mapping[10]);
     return ans;
 }
 
