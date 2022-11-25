@@ -58,12 +58,14 @@ void printhead(Node* &head){
 }
 
 int main(){
-    Node* head = NULL;
-    insertAtHead(head,10);
-    insertAtHead(head,25);
-    insertAtHead(head,15);
-    insertAtHead(head,20);
-    insertAtHead(head,25);
-    insertAtHead(head,10);
+    Node* n1 = new Node(5);
+    Node* head = n1;
+    Node* tail = n1;
+    insertAtTail(tail,10);
+    insertAtTail(tail,25);
+    insertAtTail(tail,15);
+    insertAtTail(tail,20);
+    insertAtTail(tail,25);
+    insertAtTail(tail,10);
     printhead(head);
 }
