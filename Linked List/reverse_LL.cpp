@@ -1,6 +1,5 @@
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
-#include<string.h>
 
 // Singly linked list
 class Node{
