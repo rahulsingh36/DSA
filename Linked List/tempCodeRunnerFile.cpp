@@ -1,7 +1,6 @@
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
-#include<string.h>
-#include<map>
+
 
 // Singly linked list
 class Node{
@@ -15,13 +14,6 @@ class Node{
     Node(int data){
         this -> data = data;
         this -> next = NULL;
-    }
-    ~Node(){
-        int value = this->data;
-        if(this->next != NULL){
-            delete next;
-            this-> next = NULL; 
-        }
     }
 };
 void insertAtHead(Node* &head, int d){
