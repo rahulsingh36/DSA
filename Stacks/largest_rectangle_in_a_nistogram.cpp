@@ -1,38 +1,112 @@
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class solution{
+//     public:
+//         vector<int> nextsmallerelement(vector<int>& heights, int size){
+            
+//         }
+//         vector<int> prevsmallerelement(vector<int>& heights, int size){
+
+//         }
+//         int largestrectanglearea(vector<int>& heights){
+//             int n = heights.size();
+            
+//             vector<int> next(n);
+//             next = nextsmallerelement(heights,n);
+
+//             vector<int> prev(n);
+//             prev = prevsmallerelement(heights,n);
+
+//             int area = INT_MIN;
+//             for(int i = 0;i<n;i++){
+//                 int l = heights[i];
+//                 int b = next[i] - prev[i] - 1;
+//                 if(next[i] == -1){
+//                     next[i] = n;
+//                 }
+
+//                 int newArea = l*b;
+//                 area = max(area, newArea);
+//             }
+//         return area;
+//         }
+// };
+
+// int main(){
+
+// }
+// C++ program to find maximum rectangular area in
+// linear time
 #include <bits/stdc++.h>
 using namespace std;
 
-class solution{
-    public:
-        vector<int> nextsmallerelement(vector<int>& heights, int size){
-            
-        }
-        vector<int> prevsmallerelement(vector<int>& heights, int size){
+// The main function to find the maximum rectangular
+// area under given histogram with n bars
+int getMaxArea(int hist[], int n)
+{
+	// Create an empty stack. The stack holds indexes
+	// of hist[] array. The bars stored in stack are
+	// always in increasing order of their heights.
+	stack<int> s;
 
-        }
-        int largestrectanglearea(vector<int>& heights){
-            int n = heights.size();
-            
-            vector<int> next(n);
-            next = nextsmallerelement(heights,n);
+	int max_area = 0; // Initialize max area
+	int tp; // To store top of stack
+	int area_with_top; // To store area with top bar
+					// as the smallest bar
 
-            vector<int> prev(n);
-            prev = prevsmallerelement(heights,n);
+	// Run through all bars of given histogram
+	int i = 0;
+	while (i < n) {
+		// If this bar is higher than the bar on top
+		// stack, push it to stack
+		if (s.empty() || hist[s.top()] <= hist[i])
+			s.push(i++);
 
-            int area = INT_MIN;
-            for(int i = 0;i<n;i++){
-                int l = heights[i];
-                int b = next[i] - prev[i] - 1;
-                if(next[i] == -1){
-                    next[i] = n;
-                }
+		// If this bar is lower than top of stack,
+		// then calculate area of rectangle with stack
+		// top as the smallest (or minimum height) bar.
+		// 'i' is 'right index' for the top and element
+		// before top in stack is 'left index'
+		else {
+			tp = s.top(); // store the top index
+			s.pop(); // pop the top
 
-                int newArea = l*b;
-                area = max(area, newArea);
-            }
-        return area;
-        }
-};
+			// Calculate the area with hist[tp] stack
+			// as smallest bar
+			area_with_top
+				= hist[tp]
+				* (s.empty() ? i : i - s.top() - 1);
 
-int main(){
+			// update max area, if needed
+			if (max_area < area_with_top)
+				max_area = area_with_top;
+		}
+	}
 
+	// Now pop the remaining bars from stack and calculate
+	// area with every popped bar as the smallest bar
+	while (s.empty() == false) {
+		tp = s.top();
+		s.pop();
+		area_with_top
+			= hist[tp] * (s.empty() ? i : i - s.top() - 1);
+
+		if (max_area < area_with_top)
+			max_area = area_with_top;
+	}
+
+	return max_area;
 }
+
+// Driver code
+int main()
+{
+	int hist[] = { 6, 2, 5, 4, 5, 1, 6 };
+	int n = sizeof(hist) / sizeof(hist[0]);
+
+	// Function call
+	cout << "Maximum area is " << getMaxArea(hist, n);
+	return 0;
+}
+
