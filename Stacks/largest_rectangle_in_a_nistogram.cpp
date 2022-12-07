@@ -98,7 +98,6 @@ int getMaxArea(int hist[], int n)
 
 	return max_area;
 }
-
 // Driver code
 int main()
 {
