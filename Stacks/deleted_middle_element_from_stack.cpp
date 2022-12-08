@@ -21,6 +21,7 @@ void deletemiddle(stack<char> &inputstack, int n){
     solve(inputstack,count,n);
 }
 
+
 int main(){
     stack<char> st;
  
