@@ -13,7 +13,6 @@ void pypart(int n)
 		// Inner loop to handle number of columns
 		// values changing acc. to outer loop
 		while (j < i) {
-
 			// Printing stars
 			cout << "* ";
 			j++;
