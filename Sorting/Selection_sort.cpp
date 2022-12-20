@@ -1,27 +1,46 @@
-#include<iostream>
-#include<math.h>
+#include <bits/stdc++.h>
 using namespace std;
-#include<string.h>
 
-int selectionSort(int arr[],int size){
-    for(int i=0;i<size;i++){
-        int minIndex=i;
-        for(int j=i+1;j<size;j++){
-            if(arr[minIndex]>arr[j])
-                minIndex=j;
-        }
-        swap(arr[minIndex],arr[i]);
-    }
+//Swap function
+void swap(int *xp, int *yp)
+{
+	int temp = *xp;
+	*xp = *yp;
+	*yp = temp;
 }
 
-int printArray(int arr[],int size){
-    for(int i=0;i<size;i++){
-        cout<<arr[i]<<" ";
-    }
+void selectionSort(int arr[], int n)
+{
+	int i, j, min;
+	for (i = 0; i < n-1; i++)
+	{
+		min = i;
+		for (j = i+1; j < n; j++)
+		if (arr[j] < arr[min])
+			min = j;
+
+		if(min!=i)
+			swap(&arr[min], &arr[i]);
+	}
 }
 
-int main(){
-int arr[5]={16,22,43,24,5};
-int ans1=selectionSort(arr,5);
-printArray(arr,5);
+//Function to print an array
+void printArray(int arr[], int size)
+{
+	int i;
+	for (i=0; i < size; i++)
+		cout << arr[i] << " ";
+	cout << endl;
 }
+
+// Driver program to test above functions
+int main()
+{
+	int arr[] = {64, 25, 12, 22, 11};
+	int n = sizeof(arr)/sizeof(arr[0]);
+	selectionSort(arr, n);
+	cout << "Sorted array: \n";
+	printArray(arr, n);
+	return 0;
+}
+// This is code is contributed by rathbhupendra
