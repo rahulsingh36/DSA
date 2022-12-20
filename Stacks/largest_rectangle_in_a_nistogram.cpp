@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> nextsmallerelement(vector<int>& arr, int n){
+vector<int> nextsmallerelement(vector<int> arr, int n){
     stack<int> s;
     s.push(-1);
 
@@ -34,7 +34,7 @@ vector<int> prevsmallerelement(vector<int>& arr, int n){
 // vector<int> max(vector<int> &area,vector<int>& newArea){
 
 // }
-vector<int> largestrectanglearea(vector<int>& heights){
+int largestrectanglearea(vector<int>& heights){
     int n = heights.size();
             
     vector<int> next(n);
